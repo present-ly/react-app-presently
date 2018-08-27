@@ -34,7 +34,8 @@
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "reactstrap": "^6.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
