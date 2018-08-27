@@ -1,5 +1,5 @@
 export const AUTH_CONFIG = {
-  domain: 'onevigor.auth0.com',
-  clientId: 'o25ycjrpkKdhLrbs_tZu1Fb9viLyrmVo',
+  domain: 'present-ly.auth0.com',
+  clientId: '7VfRkqVIZBkWZ34qRqdlh2wmEpMbJiHW',
   callbackUrl: 'http://localhost:3000/callback'
 }
