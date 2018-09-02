@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './LoginPanelHeader.css';
 
 const TESTING = true;
 const TESTING_LIFE_CYCLE = true;
@@ -19,7 +20,9 @@ export default class LoginPanel extends Component {
     return (
       <div className="text-center panel-header-login">
         <div className="panel-login-logo">
-          <img src="assets/logo.png" alt="present-ly logo" />
+          <img src="assets/logo.png"
+               className="panel-header-width"
+               alt="present-ly logo"  />
         </div>
         <div className="panel-header-message">
           <h3>Hello!</h3>
