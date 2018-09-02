@@ -11,7 +11,7 @@ export default class App extends Component {
     if (isAuthenticated()) {
       this.props.history.replace(`/${route}`);
     } else {
-      this.props.history.replace(`/login`);
+      // TODO: Add AuthorizationService.handleUnathorized();
     }
   }
 
@@ -26,9 +26,6 @@ export default class App extends Component {
 
   componentDidMount() {
     const { isAuthenticated } = this.props.auth;
-    if (!isAuthenticated()) {
-      this.props.history.replace(`/login`);
-    }
   }
 
   onSelect() {
