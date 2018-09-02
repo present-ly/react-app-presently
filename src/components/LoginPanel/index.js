@@ -11,9 +11,8 @@ const TESTING_LIFE_CYCLE = true;
 export default class LoginPanel extends Component {
   constructor(props) {
     super(props);
-    this.props = props;
     this.state = {
-      isSignUp: false
+      isSignUp: this.props.isSignUp
     };
     // Methods
     this.toggleSignUp = this.toggleSignUp.bind(this);
@@ -36,9 +35,10 @@ export default class LoginPanel extends Component {
           { this.state.isSignUp ? <span className="p-10 glyphicon glyphicon-chevron-left" onClick={this.toggleSignUp}> Back</span> : '' }
         </div>
         {
-          !this.state.isSignUp ?
-          <LoginControlContainer auth={this.auth} toggleSignUp={this.toggleSignUp} {...this.props} /> :
-          <SignUpContainer auth={this.auth} toggleSignUp={this.toggleSignUp} {...this.props} />
+          this.state.isSignUp ?
+            <SignUpContainer auth={this.auth} toggleSignUp={this.toggleSignUp} {...this.props} /> :
+            <LoginControlContainer auth={this.auth} toggleSignUp={this.toggleSignUp} {...this.props} />
+
         }
       </div>
     );

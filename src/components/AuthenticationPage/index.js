@@ -9,9 +9,6 @@ export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.props = props;
-    this.state = {
-      isSignUp: false
-    };
     // Methods
   }
 
@@ -39,7 +36,7 @@ export default class LoginPage extends Component {
       <div className="container-fluid no-pad fill-height">
         <div className="col-xs-12 col-sm-6 col-md-4 no-pad container-login fill-height">
           <div className="wrapper-login-panel">
-            <LoginPanel auth={this.props.auth} {...this.props} />
+            <LoginPanel auth={this.props.auth} isSignUp={this.props.isSignUp} {...this.props} />
           </div>
         </div>
         <div className="col-xs-12 col-sm-6 col-md-8 container-login-market-board fill-height">
