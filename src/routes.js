@@ -16,6 +16,7 @@ import FriendListPage from './components/FriendListPage';
 import FriendFinderPage from './components/FriendFinderPage';
 import FriendDetailPage from './components/FriendDetailPage';
 import FriendMarketPage from './components/FriendMarketPage';
+import ProductDetailPage from './components/ProductDetailPage';
 
 const auth = new Auth();
 
@@ -47,11 +48,15 @@ export const makeMainRoutes = () => {
             <Route path="/login" render={(props) => <AuthenticationPage auth={auth} isSignUp={false} {...props} />} />
             <Route path="/signUp" render={(props) => <AuthenticationPage auth={auth} isSignUp={true} {...props} />} />
             {/* PRIVATE ROUTES */}
+            {/* HOMESCREEN */}
             <Route path="/dashboard" render={(props) => <DashboardPage auth={auth} {...props} />} />
+            {/* FRIEND PATHS */}
             <Route exact path="/friends" render={(props) => <FriendListPage auth={auth} {...props} />} />
             <Route exact path="/search/friends" render={(props) => <FriendFinderPage auth={auth} {...props} />} />
             <Route exact path="/friends/:friendId" render={(props) => <FriendDetailPage auth={auth} {...props} />} />
             <Route exact path="/friends/:friendId/market" render={(props) => <FriendMarketPage auth={auth} {...props} />} />
+            {/* STOREFRONT */}
+            <Route exact path="/products/:productId" render={(props) => <ProductDetailPage auth={auth} {...props} />} />
           <Route path="" redirectTo="/login" pathMatch="exact" />
         </div>
       </Router>
