@@ -13,6 +13,7 @@ import AuthenticationPage from './components/AuthenticationPage';
 // PRIVATE PAGES
 import DashboardPage from './components/DashboardPage';
 import FriendListPage from './components/FriendListPage';
+import FriendFinderPage from './components/FriendFinderPage';
 import FriendDetailPage from './components/FriendDetailPage';
 import FriendMarketPage from './components/FriendMarketPage';
 
@@ -48,6 +49,7 @@ export const makeMainRoutes = () => {
             {/* PRIVATE ROUTES */}
             <Route path="/dashboard" render={(props) => <DashboardPage auth={auth} {...props} />} />
             <Route exact path="/friends" render={(props) => <FriendListPage auth={auth} {...props} />} />
+            <Route exact path="/search/friends" render={(props) => <FriendFinderPage auth={auth} {...props} />} />
             <Route exact path="/friends/:friendId" render={(props) => <FriendDetailPage auth={auth} {...props} />} />
             <Route exact path="/friends/:friendId/market" render={(props) => <FriendMarketPage auth={auth} {...props} />} />
           <Route path="" redirectTo="/login" pathMatch="exact" />
