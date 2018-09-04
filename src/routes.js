@@ -14,6 +14,7 @@ import AuthenticationPage from './components/AuthenticationPage';
 import DashboardPage from './components/DashboardPage';
 import FriendListPage from './components/FriendListPage';
 import FriendDetailPage from './components/FriendDetailPage';
+import FriendMarketPage from './components/FriendMarketPage';
 
 const auth = new Auth();
 
@@ -48,6 +49,7 @@ export const makeMainRoutes = () => {
             <Route path="/dashboard" render={(props) => <DashboardPage auth={auth} {...props} />} />
             <Route exact path="/friends" render={(props) => <FriendListPage auth={auth} {...props} />} />
             <Route exact path="/friends/:friendId" render={(props) => <FriendDetailPage auth={auth} {...props} />} />
+            <Route exact path="/friends/:friendId/market" render={(props) => <FriendMarketPage auth={auth} {...props} />} />
           <Route path="" redirectTo="/login" pathMatch="exact" />
         </div>
       </Router>
