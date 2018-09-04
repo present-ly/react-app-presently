@@ -12,7 +12,8 @@ import Callback from './components/Callback/Callback';
 import AuthenticationPage from './components/AuthenticationPage';
 // PRIVATE PAGES
 import DashboardPage from './components/DashboardPage';
-import FriendListPage from "./components/FriendListPage";
+import FriendListPage from './components/FriendListPage';
+import FriendDetailPage from './components/FriendDetailPage';
 
 const auth = new Auth();
 
@@ -45,8 +46,9 @@ export const makeMainRoutes = () => {
             <Route path="/signUp" render={(props) => <AuthenticationPage auth={auth} isSignUp={true} {...props} />} />
             {/* PRIVATE ROUTES */}
             <Route path="/dashboard" render={(props) => <DashboardPage auth={auth} {...props} />} />
-            <Route path="/friends" render={(props) => <FriendListPage auth={auth} {...props} />} />
-          <Route path="" redirectTo="/login" pathMatch="full" />
+            <Route exact path="/friends" render={(props) => <FriendListPage auth={auth} {...props} />} />
+            <Route exact path="/friends/:friendId" render={(props) => <FriendDetailPage auth={auth} {...props} />} />
+          <Route path="" redirectTo="/login" pathMatch="exact" />
         </div>
       </Router>
   );
