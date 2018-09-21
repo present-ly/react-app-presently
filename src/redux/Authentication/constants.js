@@ -1,0 +1,5 @@
+export default {
+    LOGIN_CUSTOM: 'LOGIN_CUSTOM',
+    LOGIN_OAUTH: 'LOGIN_OAUTH',
+    LOGOUT: 'LOGOUT'
+};

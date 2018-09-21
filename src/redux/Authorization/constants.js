@@ -1,0 +1,4 @@
+export default {
+    AUTHORIZE_CUSTOM: 'AUTHORIZE_CUSTOM',
+    AUTHORIZE_OAUTH: 'AUTHORIZE',
+};
