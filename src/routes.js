@@ -17,6 +17,7 @@ import FriendFinderPage from './components/FriendFinderPage';
 import FriendDetailPage from './components/FriendDetailPage';
 import FriendMarketPage from './components/FriendMarketPage';
 import ProductDetailPage from './components/ProductDetailPage';
+import PurchasePage from './components/PurchasePage';
 
 const auth = new Auth();
 
@@ -57,6 +58,7 @@ export const makeMainRoutes = () => {
             <Route exact path="/friends/:friendId/market" render={(props) => <FriendMarketPage auth={auth} {...props} />} />
             {/* STOREFRONT */}
             <Route exact path="/products/:productId" render={(props) => <ProductDetailPage auth={auth} {...props} />} />
+            <Route exact path="/products/:productId/purchase" render={(props) => <PurchasePage auth={auth} {...props} />} />
           <Route path="" redirectTo="/login" pathMatch="exact" />
         </div>
       </Router>
