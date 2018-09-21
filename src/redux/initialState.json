@@ -34,6 +34,8 @@
       }
     }
   },
+  "userProfile": {},
+  "interests": {},
   "notifications": [],
   "gamification": {
     "level": "newbie",
@@ -48,7 +50,7 @@
     "cart": [],
     "orders": [],
     "payments": [],
-    "reciepts": []
+    "receipts": []
   }
 
 }
