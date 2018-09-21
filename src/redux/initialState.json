@@ -1,0 +1,56 @@
+{
+  "authentication": {
+    "currentUser" : {},
+    "authenticatedUser": {},
+    "authToken": null,
+    "refreshToken": null
+  },
+  "authorization": {
+    "tier": {
+      "tiers": [],
+      "services": [],
+      "currentTier": "free"
+    },
+    "roles": [],
+    "userGroups": [],
+    "organizations": [],
+    "organizationUnits": [],
+    "teams": [],
+    "currentOrganization": null,
+    "currentOrganizationUnit": null,
+    "currentTeam": null
+  },
+  "userPreferences": {
+    "theme": "default",
+    "settings": {
+      "notifications": {
+        "doNotDisturb": false,
+        "app": true,
+        "email": false,
+        "browser": null,
+        "device": null,
+        "sms": false,
+        "schedule": []
+      }
+    }
+  },
+  "userProfile": {},
+  "interests": {},
+  "notifications": [],
+  "gamification": {
+    "level": "newbie",
+    "badges": [],
+    "points": 0,
+    "rewards": []
+  },
+  "friends": [],
+  "friendRequests": [],
+  "reminders": [],
+  "ecommerce":{
+    "cart": [],
+    "orders": [],
+    "payments": [],
+    "receipts": []
+  }
+
+}

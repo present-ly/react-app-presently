@@ -1,0 +1,4 @@
+export default {
+    INVITE_EMAIL: 'INVITE_EMAIL',
+    INVITE_OAUTH: 'INVITE_OAUTH'
+};
