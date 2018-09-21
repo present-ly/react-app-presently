@@ -1,0 +1,4 @@
+export default {
+    EDIT_USER_PROFILE: 'EDIT_USER_PROFILE',
+    SAVE_USER_PROFILE: 'SAVE_USER_PROFILE',
+};
