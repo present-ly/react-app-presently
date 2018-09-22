@@ -1,10 +1,10 @@
-import NOTIFICATION_ACTIONS from './constants'
-import NotificationActionCreator from './actionCreators'
-import NotificationReducer from './reducers'
+import { combineReducers } from 'redux';
+import { MessageReducer } from './Message';
+import { ReminderReducer } from './Reminder';
+import { ErrorReducer } from './Error';
 
-
-export default {
-    NOTIFICATION_ACTIONS,
-    NotificationActionCreator,
-    NotificationReducer,
-}
+export default combineReducers({
+    messages: MessageReducer,
+    reminders: ReminderReducer,
+    errors: ErrorReducer,
+});

@@ -1,51 +1,61 @@
 {
-  "authentication": {
-    "currentUser" : {},
-    "authenticatedUser": {},
-    "authToken": null,
-    "refreshToken": null
-  },
-  "authorization": {
-    "tier": {
-      "tiers": [],
-      "services": [],
-      "currentTier": "free"
+  "auth": {
+    "authenticated": {
+      "currentUser" : {},
+      "authenticatedUser": {},
+      "authToken": null,
+      "refreshToken": null
     },
-    "roles": [],
-    "userGroups": [],
-    "organizations": [],
-    "organizationUnits": [],
-    "teams": [],
-    "currentOrganization": null,
-    "currentOrganizationUnit": null,
-    "currentTeam": null
-  },
-  "userPreferences": {
-    "theme": "default",
-    "settings": {
-      "notifications": {
-        "doNotDisturb": false,
-        "app": true,
-        "email": false,
-        "browser": null,
-        "device": null,
-        "sms": false,
-        "schedule": []
-      }
+    "authorized": {
+      "tier": {
+        "tiers": [],
+        "services": [],
+        "currentTier": "free"
+      },
+      "roles": [],
+      "userGroups": [],
+      "organizations": [],
+      "organizationUnits": [],
+      "teams": [],
+      "currentOrganization": null,
+      "currentOrganizationUnit": null,
+      "currentTeam": null
     }
   },
-  "userProfile": {},
-  "interests": {},
-  "notifications": [],
+  "user": {
+    "preferences": {
+      "theme": "default",
+      "settings": {
+        "notifications": {
+          "doNotDisturb": false,
+          "app": true,
+          "email": false,
+          "browser": null,
+          "device": null,
+          "sms": false,
+          "schedule": []
+        }
+      }
+    },
+    "profile": {},
+    "interests": []
+  },
+  "notification": {
+    "messages": [],
+    "reminders": [],
+    "errors": []
+  },
   "gamification": {
     "level": "newbie",
     "badges": [],
     "points": 0,
     "rewards": []
   },
-  "friends": [],
-  "friendRequests": [],
-  "reminders": [],
+  "socialNetwork": {
+    "invitations": [],
+    "friends": [],
+    "friendRequests": []
+  },
   "ecommerce":{
     "cart": [],
     "orders": [],
