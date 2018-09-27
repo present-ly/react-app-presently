@@ -37,7 +37,7 @@ export default class App extends Component {
     return (
       <div>
         <Menu theme="dark" defaultActive="1" className="el-menu-demo" mode="horizontal" onSelect={this.onSelect.bind(this)}>
-          <Menu.Item index="1">Edisen</Menu.Item>
+          <Menu.Item index="1" onClick={this.goTo.bind(this, 'dashboard')}>Edisen</Menu.Item>
           <Menu.SubMenu index="2" title="Teams">
             <Menu.Item index="2-1">Option 1</Menu.Item>
             <Menu.Item index="2-2">Option 2</Menu.Item>
@@ -47,7 +47,12 @@ export default class App extends Component {
           <Menu.Item index="4">Team Members</Menu.Item>
           <Menu.SubMenu index="5" title="Profile">
             <Menu.Item index="5-1">Profile</Menu.Item>
-            <Menu.Item index="5-2">Logout</Menu.Item>
+              {
+                isAuthenticated()
+                ? (<Menu.Item index="5-2" handleItemClick={this.logout.bind(this)}>Logout</Menu.Item>)
+                : (<Menu.Item index="5-2" handleItemClick={this.login.bind(this)}>Login</Menu.Item>)
+
+              }
           </Menu.SubMenu>
         </Menu>
         <div className="line"></div>

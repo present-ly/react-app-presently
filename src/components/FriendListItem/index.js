@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 
-export default class FriendListPage extends Component {
+export default class FriendListItem extends Component {
 
   // constructor(props) {
   //   super(props);
@@ -11,14 +11,18 @@ export default class FriendListPage extends Component {
     console.log('componentDidMount()');
   }
 
+  avatarLink(friend) {
+     return friend.avatarURL && friend.avatarURL !== '' ? friend.avatarURL : 'assets/avatar.png';
+  }
 
   render() {
       const friend = this.props.friend;
+      const imageURL = this.avatarLink(friend);
     return (
       <div className="row">
           <div className="col-xs-2">
-              <img className="avatar"
-                   href={friend.avatarURL}
+              <img className="avatar-sm"
+                   src={this.avatarLink(friend)}
                    alt={ 'Image of ' + friend.firstName + ' ' + friend.lastName } />
           </div>
           <div className="col-xs-10">

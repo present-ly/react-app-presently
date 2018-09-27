@@ -1,0 +1,27 @@
+.login-content {
+  color: white;
+}
+
+.pos-b-r {
+  position: absolute;
+  bottom: calc(25%);
+  right: 15px;
+}
+
+.login-content-header {
+
+}
+
+.login-content-main {
+
+}
+
+
+
+.w-sm-300 {
+  width: 300px;
+}
+
+.p-t-30 {
+  padding-top: 30px;
+}

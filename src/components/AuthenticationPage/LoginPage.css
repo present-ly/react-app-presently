@@ -8,6 +8,12 @@
     text-align: center;
 }
 
+.bg-confetti {
+    background: url("../../../public/assets/background-confetti.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .no-pad {
     padding: 0px;
 }

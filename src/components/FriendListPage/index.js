@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 // APP COMPONENTS
 import FriendListItem from '../FriendListItem';
+import './friendListPage.css';
 // TESTING
 //const TESTING = true;
 // const LOG_ENTRY = true;
@@ -9,25 +10,28 @@ import FriendListItem from '../FriendListItem';
 // MOCK DATA
 const mockedFriendList = [
     {
-        id: '1',
+        id: 1,
         firstName: "Matt",
         lastName: "Valli",
         dateOfBirth: "05/27/1987",
-        avatarURL: "https://media.licdn.com/dms/image/C4E03AQFdcDwlmX3n7w/profile-displayphoto-shrink_200_200/0?e=1541635200&v=beta&t=3Tq1d3QlN_0CVPTx0NfA4ubqt0DQhdyRqJjQ_4CuFDk"
+        avatarURL: "https://media.licdn.com/dms/image/C4E03AQFdcDwlmX3n7w/profile-displayphoto-shrink_200_200/0?e=1541635200&v=beta&t=3Tq1d3QlN_0CVPTx0NfA4ubqt0DQhdyRqJjQ_4CuFDk",
+        gender: "male"
     },
     {
-        id: '2',
+        id: 2,
         firstName: "Steph",
         lastName: "Huynh",
         dateOfBirth: "08/07/1980",
-        avatarURL: "https://media.licdn.com/dms/image/C4E03AQFdcDwlmX3n7w/profile-displayphoto-shrink_200_200/0?e=1541635200&v=beta&t=3Tq1d3QlN_0CVPTx0NfA4ubqt0DQhdyRqJjQ_4CuFDk"
+        avatarURL: "https://media.licdn.com/dms/image/C5603AQGO7ZIU7gX3vw/profile-displayphoto-shrink_200_200/0?e=1543449600&v=beta&t=7i5Nkf2MLvIC1gaOi5FSIr9lBHAbbpDgJMcz0Nzspjc",
+        gender: "female"
     },
     {
-        id: '3',
+        id: 3,
         firstName: "Justin",
         lastName: "Radeka",
         dateOfBirth: "01/11/1970",
-        avatarURL: "https://media.licdn.com/dms/image/C4E03AQFdcDwlmX3n7w/profile-displayphoto-shrink_200_200/0?e=1541635200&v=beta&t=3Tq1d3QlN_0CVPTx0NfA4ubqt0DQhdyRqJjQ_4CuFDk"
+        //avatarURL: null,
+        gender: "male"
     }
 ];
 
@@ -50,13 +54,19 @@ export default class FriendListPage extends Component {
   }
 
   displayFriends(friendList) {
-    return _.map(friendList, (friend) => {
+    return friendList.map((friend) => {
       return (
+        <div className='friend-list-item' onClick={() => this.navigate(friend)}>
           <FriendListItem friend={friend}
                           key={ friend.id } />
+        </div>
       );
     })
   }
+
+navigate(friend) {
+  this.props.history.push(`/friends/${friend.id}`)
+}
 
   render() {
     const friendList = this.state.friendList;

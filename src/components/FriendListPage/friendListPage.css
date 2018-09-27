@@ -1,0 +1,13 @@
+.friend-list-item {
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+.friend-list-item:last-child {
+  border-bottom: none;
+}
+
+.friend-list-item:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
