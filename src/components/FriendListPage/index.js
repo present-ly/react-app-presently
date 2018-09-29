@@ -22,7 +22,7 @@ const mockedFriendList = [
         firstName: "Steph",
         lastName: "Huynh",
         dateOfBirth: "08/07/1980",
-        avatarURL: "https://media.licdn.com/dms/image/C5603AQGO7ZIU7gX3vw/profile-displayphoto-shrink_200_200/0?e=1543449600&v=beta&t=7i5Nkf2MLvIC1gaOi5FSIr9lBHAbbpDgJMcz0Nzspjc",
+        avatarURL: "",
         gender: "female"
     },
     {

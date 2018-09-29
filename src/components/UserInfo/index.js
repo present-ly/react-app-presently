@@ -34,25 +34,27 @@ export default class UserInfo extends Component {
     const fullname = `${friend.firstName} ${friend.lastName}`;
     const disableUserInput = this.state.disableUserInput;
     return (
-      <div className="bg-primary">
-        <div>
-          <img src={friend.avatarURL} alt={`Image of ${fullname}`} />
+      <div className="row bg-primary">
+        <div className="col-xs-12 text-center p-t-15">
+          <img className="fit-width" src={friend.avatarURL} alt={`Image of ${fullname}`} />
           <h4>{fullname}</h4>
         </div>
-        <div>
-          <div className="form-group">
-            <label for="dateOfBirth">Birthday</label>
-            <input className="form-control"
-                    type="text"
-                    name="dateOfBirth"
-                    id="dateOfBirth"
-                    placeholder="08/07/1980"
-                    value={friend.dateOfBirth}
-                    onChange={this.updateDateOfBirth}
-                    disabled={disableUserInput ? "disabled" : ""}></input>
+        <div className="col-xs-12">
+          <div className="form">
+            <div className="form-group">
+              <label for="dateOfBirth">Birthday</label>
+              <input className="form-control"
+                      type="text"
+                      name="dateOfBirth"
+                      id="dateOfBirth"
+                      placeholder="08/07/1980"
+                      value={friend.dateOfBirth}
+                      onChange={this.updateDateOfBirth}
+                      disabled={disableUserInput ? "disabled" : ""}></input>
+
+            </div>
 
           </div>
-
         </div>
       </div>
     );

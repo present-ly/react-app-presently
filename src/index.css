@@ -12,7 +12,15 @@ body {
   height: 100%;
 }
 
+.fit-width {
+  width: 100%;
+}
+
 .avatar-sm {
   max-height: 50px;
   max-width: 50px;
+}
+
+.p-t-15 {
+  padding-top:15px;
 }
