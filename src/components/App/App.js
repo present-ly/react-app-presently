@@ -44,6 +44,7 @@ export default class App extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
+    console.log('isAuthenticated', isAuthenticated)
     return (
       <div>
         <Menu theme="dark" defaultActive="1" className="el-menu-demo" mode="horizontal" onSelect={this.onSelect.bind(this)}>
@@ -57,8 +58,11 @@ export default class App extends Component {
           <Menu.Item index="4">Team Members</Menu.Item>
           <Menu.SubMenu index="5" title="Profile">
             <Menu.Item index="5-1">Profile</Menu.Item>
-            <Menu.Item index="5-2">Logout</Menu.Item>
-            <Menu.Item index="5-3">Login</Menu.Item>
+            { isAuthenticated()
+              ? <Menu.Item index="5-2">Logout</Menu.Item>
+              : <Menu.Item index="5-3">Login</Menu.Item>
+            }
+
           </Menu.SubMenu>
         </Menu>
       </div>
