@@ -9,7 +9,6 @@ const TESTING_LIFE_CYCLE = true;
 export default class SignUpControl extends Component {
   constructor(props) {
     super(props);
-    this.props = props;
     this.state = {};
     // Methods
     this.signUpClickHandler = this.signUpClickHandler.bind(this);
@@ -19,7 +18,8 @@ export default class SignUpControl extends Component {
     if (TESTING && TESTING_LIFE_CYCLE) { console.log(`${this.constructor.name}.componentDidMount()`); }
   }
 
-  signUpClickHandler() {
+  signUpClickHandler(res) {
+    console.log('RESPONSE', res)
     alert('Not Implemented - Sign Up Click Handler');
   }
 

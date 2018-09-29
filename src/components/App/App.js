@@ -28,8 +28,18 @@ export default class App extends Component {
     const { isAuthenticated } = this.props.auth;
   }
 
-  onSelect() {
+  onSelect(index, indexPath) {
+    console.log('index, indexPath', index, indexPath);
+    switch(index) {
+      case '5-2':
+        this.logout();
+        break;
+      case '5-3':
+        this.login();
+        break;
 
+        default:
+    }
   }
 
   render() {
@@ -37,7 +47,7 @@ export default class App extends Component {
     return (
       <div>
         <Menu theme="dark" defaultActive="1" className="el-menu-demo" mode="horizontal" onSelect={this.onSelect.bind(this)}>
-          <Menu.Item index="1">Edisen</Menu.Item>
+          <Menu.Item index="1" onClick={this.goTo.bind(this, 'dashboard')}>Present-ly</Menu.Item>
           <Menu.SubMenu index="2" title="Teams">
             <Menu.Item index="2-1">Option 1</Menu.Item>
             <Menu.Item index="2-2">Option 2</Menu.Item>
@@ -48,47 +58,9 @@ export default class App extends Component {
           <Menu.SubMenu index="5" title="Profile">
             <Menu.Item index="5-1">Profile</Menu.Item>
             <Menu.Item index="5-2">Logout</Menu.Item>
+            <Menu.Item index="5-3">Login</Menu.Item>
           </Menu.SubMenu>
         </Menu>
-        <div className="line"></div>
-        <Navbar fluid className="no-margin-bottom">
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Edisen</a>
-            </Navbar.Brand>
-            <Button
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, 'dashboard')}
-            >
-              Home
-            </Button>
-            {
-              !isAuthenticated() && (
-                  <Button
-                    id="qsLoginBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
-                  </Button>
-                )
-            }
-            {
-              isAuthenticated() && (
-                  <Button
-                    id="qsLogoutBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
-                  </Button>
-                )
-            }
-          </Navbar.Header>
-        </Navbar>
       </div>
     );
   }

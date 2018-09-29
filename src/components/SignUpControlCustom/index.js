@@ -6,19 +6,41 @@ const TESTING_LIFE_CYCLE = true;
 export default class SignUpControlCustom extends Component {
   constructor(props) {
     super(props);
-    this.props = props;
-    this.state = {};
+    this.state = {
+      signUpData: {},
+      blah: 'Should not make it to signUpData'
+    };
   }
 
   componentDidMount() {
     if (TESTING && TESTING_LIFE_CYCLE) { console.log(`${this.constructor.name}.componentDidMount()`); }
   }
 
-  signUp() {
-    const res = {};
-    if (this.props.cbSignUp) {
-      this.props.cbSignUp(res);
+  updateField(fieldName, value) {
+    const data = { ...this.state.signUpData };
+    data[fieldName] = value;
+    this.setState({
+      ...this.state,
+      signUpData: data
+    });
+  }
+
+  signUp(e) {
+    e.preventDefault();
+    console.log('state', this.state);
+    const signUpData = { ...this.state.signUpData };
+    if (!this.isValidPassword(signUpData)) {
+      return;
     }
+    if (this.props.cbSignUp) {
+      delete signUpData['passwordConfirm'];
+      this.props.cbSignUp(signUpData);
+    }
+  }
+
+  isValidPassword(data) {
+    const isConfirmed = data.password === data.passwordConfirm;
+    return isConfirmed;
   }
 
   render() {
@@ -26,18 +48,20 @@ export default class SignUpControlCustom extends Component {
       <form className="form">
         {/* Custom Sign Up Container */}
         <div className="">
-          {/* Username */}
+          {/* First Name */}
           <div className="form-group">
             <input type="text"
                    className="form-control"
+                   onChange={(e) => this.updateField(e.target.name, e.target.value)}
                    id="firstName"
                    name="firstName"
                    placeholder="First name" />
           </div>
-          {/* Username */}
+          {/* Last Name */}
           <div className="form-group">
             <input type="text"
                    className="form-control"
+                   onChange={(e) => this.updateField(e.target.name, e.target.value)}
                    id="lastName"
                    name="lastName"
                    placeholder="Last name" />
@@ -46,14 +70,16 @@ export default class SignUpControlCustom extends Component {
           <div className="form-group">
             <input type="text"
                    className="form-control"
+                   onChange={(e) => this.updateField(e.target.name, e.target.value)}
                    id="email"
                    name="email"
-                   placeholder="Email" />
+                   placeholder="Email Address" />
           </div>
           {/* Password */}
           <div className="form-group">
             <input type="password"
                    className="form-control"
+                   onChange={(e) => this.updateField(e.target.name, e.target.value)}
                    id="password"
                    name="password"
                    placeholder="Password" />
@@ -62,15 +88,16 @@ export default class SignUpControlCustom extends Component {
           <div className="form-group">
             <input type="password"
                    className="form-control"
-                   id="password-confirm"
-                   name="password-confirm"
+                   onChange={(e) => this.updateField(e.target.name, e.target.value)}
+                   id="passwordConfirm"
+                   name="passwordConfirm"
                    placeholder="Confirm Password" />
           </div>
           {/* Horizontal Rule */}
           <hr/>
           {/* Custom Sign Up Submit */}
           <div className="form-group">
-            <button className="btn btn-primary form-control" onClick={this.signUp}>{ this.props.labelSubmit || 'Sign Up' }</button>
+            <button className="btn btn-primary form-control" onClick={(e) => this.signUp(e)}>{ this.props.labelSubmit || 'Sign Up' }</button>
           </div>
         </div>
       </form>

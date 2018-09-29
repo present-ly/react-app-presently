@@ -9,7 +9,6 @@ const TESTING_LIFE_CYCLE = true;
 export default class SignUpContainer extends Component {
   constructor(props) {
     super(props);
-    this.props = props;
     this.state = {};
     // Methods
   }
