@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 // CSS
 import './LoginPage.css';
 // Child Components
-import LoginPanel from '../LoginPanel';
-import LoginPageContent from '../LoginPageContent';
+import LoginPanel from '../../molecules/LoginPanel';
+import LoginPageContent from '../../molecules/LoginPageContent';
 
 export default class LoginPage extends Component {
   constructor(props) {

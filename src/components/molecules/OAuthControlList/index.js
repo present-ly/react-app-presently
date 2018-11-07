@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
 // Provider Config
-import OAuthProviderConfigList from '../../services/Auth/Authentication/OAuthProviderConfig';
+import OAuthProviderConfigList from '../../../services/Auth/Authentication/OAuthProviderConfig';
 
 const TESTING = true;
 const TESTING_LIFE_CYCLE = true;

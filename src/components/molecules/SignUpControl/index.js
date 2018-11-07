@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // Child Components
-import SignUpControlCustom from '../SignUpControlCustom';
-import OAuthControlList from '../OAuthControlList';
+import SignUpControlCustom from '../SignUpControlCustom/index';
+import OAuthControlList from '../OAuthControlList/index';
 // CONSTANTS
 const TESTING = true;
 const TESTING_LIFE_CYCLE = true;

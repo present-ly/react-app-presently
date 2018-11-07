@@ -26,6 +26,7 @@ export default function (state = {}, action) {
 
         case AUTH_ACTIONS.FETCH_USER_INTERESTS:
             // TODO - Implement Fetch User Interests Reducer
+            return state;
 
         case AUTH_ACTIONS.REMOVE_USER_INTEREST:
             // TODO - Implement Remove User Interest Reducer

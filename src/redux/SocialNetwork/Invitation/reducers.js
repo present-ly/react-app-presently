@@ -10,11 +10,11 @@ export default function (state = {}, action) {
     switch(action) {
         
         case AUTH_ACTIONS.INVITE_EMAIL:
-            // TODO - Implement Custom Login Reducer
+            // TODO - Implement Invite Email Reducer
             return state;
 
         case AUTH_ACTIONS.INVITE_OAUTH:
-            // TODO - Implement OAuth Login Reducer
+            // TODO - Implement Invite OAuth Reducer
             return state;
 
 

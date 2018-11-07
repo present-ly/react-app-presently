@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 // Child Components
-import SignUpControl from '../SignUpControl';
+import SignUpControl from '../SignUpControl/index';
 import './SignUpContainer.css';
 
 const TESTING = true;

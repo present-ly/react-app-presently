@@ -7,16 +7,16 @@ import history from './services/History/index';
 // CONTAINER COMPONENTS
 import App from './components/App/App';
 // AUTH PAGES
-import Callback from './components/Callback/Callback';
+import Callback from './components/pages/Callback/Callback';
 // PUBLIC PAGES
-import AuthenticationPage from './components/AuthenticationPage';
+import AuthenticationPage from './components/pages/AuthenticationPage';
 // PRIVATE PAGES
-import DashboardPage from './components/DashboardPage';
-import FriendListPage from './components/FriendListPage';
-import FriendFinderPage from './components/FriendFinderPage';
-import FriendDetailPage from './components/FriendDetailPage';
-import FriendMarketPage from './components/FriendMarketPage';
-import ProductDetailPage from './components/ProductDetailPage';
+import DashboardPage from './components/pages/DashboardPage';
+import FriendListPage from './components/pages/FriendListPage';
+import FriendFinderPage from './components/pages/FriendFinderPage';
+import FriendDetailPage from './components/pages/FriendDetailPage';
+import FriendMarketPage from './components/pages/FriendMarketPage';
+import ProductDetailPage from './components/pages/ProductDetailPage';
 
 const auth = new Auth();
 
